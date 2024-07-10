@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,15 +12,15 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #e0e0e0;
+            background-color: #1d0552;
+            color: #fff;
         }
         .container {
             text-align: center;
-            background-color: #1d0552;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #fff;
+            max-width: 90%;
         }
         button {
             font-size: 18px;
@@ -30,6 +31,7 @@
             cursor: pointer;
             margin-top: 20px;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #e67e22;
@@ -41,6 +43,13 @@
         #processing img {
             width: 50px;
             height: 50px;
+        }
+        @media (max-width: 600px) {
+            button {
+                width: 100%;
+                font-size: 16px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
