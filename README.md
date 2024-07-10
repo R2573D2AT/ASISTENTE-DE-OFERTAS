@@ -1,4 +1,3 @@
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -109,14 +108,20 @@
                 var randomIndex = Math.floor(Math.random() * links.length);
                 var randomLink = links[randomIndex];
 
-                // Redirigir a la página en la misma ventana del navegador
-                window.location.href = randomLink;
+                // Abrir el enlace en una nueva ventana
+                var newWindow = window.open(randomLink, '_blank');
 
-                // Ocultar el mensaje de procesamiento
-                document.getElementById('processing').style.display = 'none';
-                document.getElementById('btnRedirect').style.display = 'inline-block';
+                // Mostrar un botón en caso de que la ventana emergente sea bloqueada
+                if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                    document.getElementById('processing').innerHTML = '<p>La ventana emergente fue bloqueada. Haga clic en el botón de abajo para abrir la oferta.</p><button onclick="window.open(\'' + randomLink + '\', \'_blank\')">Abrir oferta</button>';
+                } else {
+                    // Ocultar el mensaje de procesamiento si la ventana emergente se abrió correctamente
+                    document.getElementById('processing').style.display = 'none';
+                    document.getElementById('btnRedirect').style.display = 'inline-block';
+                }
             }, 5000); // 5000 milisegundos = 5 segundos
         }
     </script>
 </body>
 </html>
+
