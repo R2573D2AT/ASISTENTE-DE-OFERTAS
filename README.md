@@ -1,3 +1,4 @@
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +17,19 @@
         }
         .container {
             text-align: center;
+            background-color: #1d0552;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 90%;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 22px;
+            margin: 0;
         }
         button {
             font-size: 18px;
@@ -44,6 +54,10 @@
             height: 50px;
         }
         @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                height: auto;
+            }
             button {
                 width: 100%;
                 font-size: 16px;
@@ -54,8 +68,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Descubre las mejores ofertas en préstamos y minicréditos del momento</h1>
-        <button id="btnRedirect" onclick="redirectRandom()">Oferta del Momento</button>
+        <h1>Mejor oferta de préstamo del momento</h1>
+        <button id="btnRedirect" onclick="redirectRandom()">Iniciar búsqueda</button>
         <div id="processing">
             <img src="https://i.imgur.com/llF5iyg.gif" alt="Procesando">
             <p>Procesando...</p>
